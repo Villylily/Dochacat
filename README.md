@@ -3,7 +3,7 @@
 A Chat interface for Google Docs for when Google Chat is not an option. 
 Its also pretty simple to use 
 <img width="1408" height="592" alt="image" src="https://github.com/user-attachments/assets/a6787608-4177-46a7-ae99-c596bf143be7" />
-(Logo is AI Generated For now [(Magy)](https://github.com/Maggycat) is makeing a new logo soon)
+(Logo is AI Generated For now [@Maggycat](https://github.com/Maggycat) is makeing a new logo soon)
 
 How to use
 
