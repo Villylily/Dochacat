@@ -1,5 +1,6 @@
 # Dochacat:3
-A Chat interface for Google docs for when google chat is not an option 
+"Dough-Cha-Cat"
+A Chat interface for Google Docs for when Google Chat is not an option 
 Its pretty simple to use 
 <img width="1408" height="592" alt="image" src="https://github.com/user-attachments/assets/a6787608-4177-46a7-ae99-c596bf143be7" />
 (Logo is AI Generated) 
