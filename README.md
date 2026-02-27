@@ -7,19 +7,19 @@ Its also pretty simple to use
 
 How to use
 
-step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
+Step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
 
-step 1 -- Make a Google doc
+Step 1 -- Make a Google doc
 
-step 2 -- Go to extensions and click on apps scripts 
+Step 2 -- Go to extensions and click on apps scripts 
 
-step 3 -- Clear all text in the file then paste all of the DochacatV5.GS.code.txt file into the Code.GS and save it 
+Step 3 -- Clear all text in the file then paste all of the DochacatV5.GS.code.txt file into the Code.GS and save it 
 
-step 4 -- Make a new html file and name it "Chat" (With cap) 
+Step 4 -- Make a new html file and name it "Chat" (With cap) 
 
-step 5 -- Paste all of DochacatV5 html code.txt file into the Chat.html file and save it 
+Step 5 -- Paste all of DochacatV5 html code.txt file into the Chat.html file and save it 
 
-step 6 -- Go to Code.GS and follow the instructions 
+Step 6 -- Go to Code.GS and follow the instructions 
 
 step 7 -- Deploy it click deploy and click new deployment and set the type to web app
 Give it a description set it to execute as you
