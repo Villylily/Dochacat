@@ -7,21 +7,21 @@ Its also pretty simple to use
 
 How to use
 
-step 0 make a copy of this sheet if you wanna skip making it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
+step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
 
-step 1 make a Google doc
+step 1 -- Make a Google doc
 
-step 2 go to extensions and click on apps scripts 
+step 2 -- Go to extensions and click on apps scripts 
 
-step 3 clear all text in the file then paste all of the DochacatV5.GS.code.txt file into the Code.GS and save it 
+step 3 -- Clear all text in the file then paste all of the DochacatV5.GS.code.txt file into the Code.GS and save it 
 
-step 4 make a new html file and name it "Chat" (With cap) 
+step 4 -- Make a new html file and name it "Chat" (With cap) 
 
-step 5 paste all of DochacatV5 html code.txt file into the Chat.html file and save it 
+step 5 -- Paste all of DochacatV5 html code.txt file into the Chat.html file and save it 
 
-step 6 go to Code.GS and follow the instructions 
+step 6 -- Go to Code.GS and follow the instructions 
 
-step 7 deploy it click deploy and click new deployment and set the type to web app
+step 7 -- Deploy it click deploy and click new deployment and set the type to web app
 Give it a description set it to execute as you
 then set it to anyone with a google account 
 "for School documents set it to anyone within (SchoolNamehere)"
