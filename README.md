@@ -32,4 +32,4 @@ then go to your doc and Dochacat will show up on your toolbar
 
 Alsoo all users must be editors in the Google doc or things will break
 
-Why did i make this? Schools block Google Chat and makeing Group chats was hard not everyone had phones or anything so i made this, a Universal Groupchat for Google Docs
+Why did i make this? I'm a student and Schools block Google Chat and makeing Group chats was hard, not everyone had phones or anything so i made this, a Universal Groupchat for Google Docs. I hope it helps at least 1 person.
