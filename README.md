@@ -7,7 +7,7 @@ Its also pretty simple to use
 
 How to use
 
-step 0 make a copy of this sheet if you wanna skip makeing it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
+step 0 make a copy of this sheet if you wanna skip making it on step 6 https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/edit?usp=sharing
 
 step 1 make a Google doc
 
