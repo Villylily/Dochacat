@@ -13,11 +13,11 @@ Step 1 -- Make a Google doc
 
 Step 2 -- Go to extensions and click on apps scripts 
 
-Step 3 -- Make sure that the code.gs file is blank if not clear it, then paste all of the DochacatV5.GS.code.txt file into the Code.GS and save it 
+Step 3 -- Make sure that the code.gs file is blank if not clear it, then paste all of the DochacatV6 GS.code.txt file into the Code.GS and save it 
 
 Step 4 -- Make a new html file and name it "Chat" (With cap) 
 
-Step 5 -- Paste all of DochacatV5 html code.txt file into the Chat.html file and save it 
+Step 5 -- Paste all of DochacatV6 html.txt file into the Chat.html file and save it 
 
 Step 6 -- Go to Code.GS and follow the instructions 
 
