@@ -13,11 +13,11 @@ Step 1 -- Make a Google doc
 
 Step 2 -- Go to extensions and click on apps scripts 
 
-Step 3 -- Make sure that the code.gs file is blank if not clear it, then paste all of the DochacatV7 GS.code.txt file into the Code.GS and save it 
+Step 3 -- Make sure that the code.gs file is blank if not clear it, then paste all of the DochacatV8 GS.code.txt file into the Code.GS and save it 
 
-Step 4 -- Make a new html file and name it "Chat" (With cap) 
+Step 4 -- Make a new html file and name it "Chat"
 
-Step 5 -- Paste all of DochacatV7 html.txt file into the Chat.html file and save it 
+Step 5 -- Paste all of DochacatV8 html.txt file into the Chat.html file and save it 
 
 Step 6 -- Go to Code.GS and follow the instructions 
 
@@ -34,4 +34,4 @@ Alsoo all users must be editors in the Google doc or things will break
 
 Why did i make this? I'm a student and Schools block Google Chat and makeing Group chats was hard, not everyone had phones or anything so i made this, a Universal Groupchat for Google Docs. I hope it helps at least 1 person.
 
-How to use images (V7 only) copy and img link and put it like this [IMG]link for youtube videos copy the link and paste it (V7 only)
+How to use type /help
