@@ -7,7 +7,7 @@ Its also pretty simple to use
 
 How to use
 
-Step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 [Example Sheet](https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/copy)  WARNING: Make sure the Sheet is shared to anyone with a link otherwise it will not work 
+Step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 [Example Sheet V5,6,7 ONLY](https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/copy) [Example Sheet V8 ONLY](https://docs.google.com/spreadsheets/d/1lJ-7Ve3P58NAGSqXlrUBe1y3ITtgLYNVFA2tjaUDdRM/copy) WARNING: Make sure the Sheet is shared to anyone with a link otherwise it will not work 
 
 Step 1 -- Make a Google doc
 
