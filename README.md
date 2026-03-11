@@ -4,7 +4,7 @@ A Chat interface for Google Docs for when Google Chat is not an option.
 Its also pretty simple to use 
 <img width="1408" height="592" alt="image" src="https://github.com/user-attachments/assets/a6787608-4177-46a7-ae99-c596bf143be7" />
 (Logo is AI Generated For now)
-
+# Test Doc to test it out ([Click me](https://docs.google.com/document/d/19Txx1OX9DEmWJttRqnpS9llk_ZkHyW_0tyYAGJGMIDI/copy))
 How to use
 
 Step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 ([Example Sheet V5,6,7 ONLY](https://docs.google.com/spreadsheets/d/1wtyYQJmzs-xZbV552ot9Z4q1IWzQpU-lAgetpWdr7LA/copy)) ([Example Sheet V8 ONLY](https://docs.google.com/spreadsheets/d/1lJ-7Ve3P58NAGSqXlrUBe1y3ITtgLYNVFA2tjaUDdRM/copy)) WARNING: Make sure the Sheet is shared to anyone with a link otherwise it will not work 
