@@ -2,7 +2,7 @@
 "Dough-Cha-Cat"
 A Chat interface for Google Docs for when Google Chat is not an option. 
 Its also pretty simple to use 
-(Logo is AI Generated For now )<img width="4754" height="2523" alt="1000000254 (1)" src="https://github.com/user-attachments/assets/9eb553cc-0bd3-437a-92f2-908079abf284" />
+<img width="4754" height="2523" alt="1000000254 (1)" src="https://github.com/user-attachments/assets/9eb553cc-0bd3-437a-92f2-908079abf284" />
 
 # Test Doc to test it out ([Click me](https://docs.google.com/document/d/19Txx1OX9DEmWJttRqnpS9llk_ZkHyW_0tyYAGJGMIDI/copy))
 How to use
