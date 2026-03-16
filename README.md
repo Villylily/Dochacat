@@ -94,7 +94,7 @@ How to Set a Profile Picture
 You can’t upload files from your computer. You have to use a URL.
 
 How to get the right link:
-Find an image you like on Google Images or the web.
+Find an image you like on Google Images or the web. (or you can use gifs in the same way)
 
 On Windows (PC): Right-click the image and click "Copy image link"
 
