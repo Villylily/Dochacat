@@ -7,7 +7,7 @@ Its also pretty simple to use
 # Test Doc to test it out (V9 Pre) ([Click me](https://docs.google.com/document/d/19Txx1OX9DEmWJttRqnpS9llk_ZkHyW_0tyYAGJGMIDI/copy))
 How to use
 
-Step 0 -- Make a copy of this sheet if you wanna skip making it on step 6 ([Example Sheet](https://docs.google.com/spreadsheets/d/1I1DdL6mkeI2dVKC2NwRVC3PUkyxkwhhHP7J3HBBrdjU/copy))
+Step 0 -- Make a copy of this sheet ([Example Sheet](https://docs.google.com/spreadsheets/d/1I1DdL6mkeI2dVKC2NwRVC3PUkyxkwhhHP7J3HBBrdjU/copy))
 
 WARNING: Make sure the Sheet is shared to anyone with a link otherwise it will not work 
 
