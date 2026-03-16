@@ -14,7 +14,7 @@ Make a copy of this ([Example Sheet](https://docs.google.com/spreadsheets/d/1I1D
 WARNING: You must set the Share settings of this sheet to "Anyone with the link, are editors",otherwise the chat will not be able to sync messages.
 
 Step 1: Prepare the Google Doc
-Open the Google Doc where you want the chat to appear. Ensure that all users who need to use the chat are added as Editors in this document.
+Open the Google Doc where you want the chat to appear. Ensure that all users who need to use the chat are added as Editors in this document (or it wont see them).
 
 Step 2: Open Apps Script
 In your Google Doc, go to Extensions > Apps Script.
