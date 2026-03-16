@@ -89,4 +89,26 @@ Click Save.
 
 Google will ask for permission again. Allow everything.
 
-To see a list of commands, simply type /help in the chat box.
+# HELP ME AHHHHHHHHH
+How to Set a Profile Picture
+You can’t upload files from your computer. You have to use a URL.
+
+How to get the right link:
+Find an image you like on Google Images or the web.
+
+On Windows (PC): Right-click the image and click "Copy image link"
+
+On Chromebook: Tap the trackpad with two fingers on the image and click "Copy image address"
+
+In the Chat: Type /pfp followed by a space, then paste your link.
+
+Example: /pfp https://example.com/photo.png
+
+If the image is broken: Make sure the link you pasted ends in .png, .jpg, or .gif. If it doesn't, the chat won't know it's a picture!
+
+How to Set a Nickname
+In the chat box, type /nick followed by your new name.
+
+Example: /nick CoolCat7
+
+to see a list of commands, simply type /help in the chat box.
