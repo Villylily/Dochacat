@@ -8,7 +8,7 @@ Its also pretty simple to use
 How to use
 
 # Setup Instructions
-Step 0: The Spreadsheet
+Step 0: Spreadsheet
 Make a copy of this ([Example Sheet](https://docs.google.com/spreadsheets/d/1I1DdL6mkeI2dVKC2NwRVC3PUkyxkwhhHP7J3HBBrdjU/copy)).
 
 WARNING: You must set the Share settings of this sheet to "Anyone with the link, are editors",otherwise the chat will not be able to sync messages.
