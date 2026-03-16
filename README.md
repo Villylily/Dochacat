@@ -109,6 +109,6 @@ If the image is broken: Make sure the link you pasted ends in .png, .jpg, or .gi
 How to Set a Nickname
 In the chat box, type /nick followed by your new name.
 
-Example: /nick CoolCat7
+Example: /nick Villyily
 
 to see a list of commands, simply type /help in the chat box.
