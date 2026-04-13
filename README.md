@@ -112,4 +112,4 @@ In the chat box, type /nick followed by your new name.
 Example: /nick Villyily
 
 to see a list of commands, simply type /help in the chat box.
-🐱
+
