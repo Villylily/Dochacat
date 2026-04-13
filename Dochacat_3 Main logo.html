@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dochacat:3 Rain V2 - Mini Logos!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-border: #30363d;
+            --text: #c9d1d9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        .bg-ui { position: fixed; width: 100%; opacity: 0.15; pointer-events: none; z-index: 0; filter: grayscale(1); }
+        #bg-status { top: 0; border-bottom: 1px solid var(--card-border); padding: 15px; display: flex; gap: 15px; }
+        #bg-footer { bottom: 0; border-top: 1px solid var(--card-border); padding: 20px; display: flex; gap: 10px; }
+        .bg-fake-input { flex-grow: 1; height: 35px; border-radius: 20px; border: 1px solid var(--card-border); }
+        .bg-fake-pfp { width: 35px; height: 35px; border-radius: 50%; background: #333; }
+
+        .dochacat-logo {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; z-index: 10;
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); pointer-events: none;
+        }
+
+        #rain-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none;
+        }
+
+        .mini-app {
+            position: absolute;
+            width: 160px; height: 220px;
+            background-color: var(--bg, #1a1a1a);
+            border: 2px solid var(--card-border, #333);
+            border-radius: 12px;
+            display: flex; flex-direction: column;
+            overflow: hidden; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            will-change: transform;
+            color: var(--text, #fff);
+            font-family: 'Roboto Mono', monospace;
+            pointer-events: auto; 
+        }
+
+        .status-bar, .chat-area, .input-area { position: relative; z-index: 2; }
+        
+        .status-bar { 
+            height: 25px; border-bottom: 1px solid var(--card-border); 
+            display: flex; padding: 5px 10px; background: var(--bg); 
+            align-items: center; justify-content: space-between; 
+        }
+        
+        .status-dots { display: flex; gap: 5px; }
+        .fake-pfp { width: 14px; height: 14px; border-radius: 50%; background: var(--reply-bg, #333); border: 1px solid var(--primary, #555); }
+        
+        .mini-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8px;
+            font-weight: 900;
+            color: var(--text);
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        .chat-area { flex-grow: 1; padding: 8px; display: flex; flex-direction: column; gap: 8px; background: transparent; overflow: hidden; }
+        .msg { background: var(--reply-bg, #222); border: 1px solid var(--card-border); border-radius: 6px; padding: 6px; font-size: 8px; line-height: 1.3; }
+        .msg-sender { font-weight: bold; color: var(--primary, #888); margin-bottom: 3px; font-size: 7.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .input-area { height: 25px; border-top: 1px solid var(--card-border); display: flex; align-items: center; padding: 0 8px; background: var(--bg); }
+        .mini-fake-input { flex-grow: 1; height: 12px; background: var(--reply-bg, #222); border: 1px solid var(--card-border); border-radius: 10px; }
+
+        .internal-canvas { position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none; display: none; }
+        .petal-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        
+        @keyframes fall-local {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(240px) rotate(360deg); opacity: 0; }
+        }
+        .petal-local {
+            position: absolute; top: -20px; background: #ffb7c5;
+            border-radius: 150% 0 150% 0; width: 8px; height: 8px; pointer-events: none;
+            animation: fall-local linear forwards;
+        }
+
+        .mini-app.roseblossom-mode .internal-canvas { display: block; }
+        .mini-app.roseblossom-mode .status-bar, 
+        .mini-app.roseblossom-mode .input-area { background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(4px); }
+
+        .mini-app.dark-mode { --bg: #1a1a1a; --text: #e8eaed; --card-border: #3c4043; --reply-bg: #2d2e30; --primary: #58a6ff; }
+        .mini-app.black-mode { --bg: #000000; --text: #ffffff; --card-border: #1a1a1a; --reply-bg: #0d0d0d; --primary: #3e82f1; }
+        .mini-app.midnight-mode { --bg: #0b1120; --text: #e2e8f0; --card-border: #1e293b; --reply-bg: #1e293b; --primary: #38bdf8; }
+        .mini-app.glass-mode { background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); --bg: transparent; --reply-bg: rgba(255, 255, 255, 0.4); --card-border: rgba(255, 255, 255, 0.6); --text: #1c1e21; --primary: #0084ff; }
+        .mini-app.glass-mode .msg, .mini-app.glass-mode .status-bar, .mini-app.glass-mode .input-area { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.3); }
+        @keyframes dataScan { 0% { background-position: 0% 0%; } 100% { background-position: 0% 1000%; } }
+        .mini-app.ai-mode { --bg: #00080a; --text: #00f2ff; --card-border: #004d4d; --reply-bg: rgba(0, 15, 20, 0.7); --primary: #00f2ff; background: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px); background-size: 10px 10px; background-color: #00080a; animation: dataScan 30s linear infinite; }
+        .mini-app.ai-mode .msg { border-left: 3px solid var(--primary); border-radius: 2px; }
+        .mini-app.sakura-mode { --bg: #3a1c1c; --text: #ffffff; --card-border: #ffb7c5; --reply-bg: rgba(0, 0, 0, 0.3); --primary: #ffb7c5; background: repeating-linear-gradient(45deg, #3a1c1c, #3a1c1c 2px, #3d1e1e 2px, #3d1e1e 4px); }
+        .mini-app.velvet-mode { --bg: #0d1611; --reply-bg: #162436; --card-border: #801a23; --text: #e6d8e6; --primary: #d8bfd8; }
+        .mini-app.google90-mode { --bg: #ffffff; --text: #000000; --primary: #1a0dab; --reply-bg: #eeeeee; --card-border: #cccccc; font-family: 'Times New Roman', Times, serif; border-radius: 0; border: 1px solid #7b7b7b; }
+        .mini-app.google90-mode .msg { border: none; border-bottom: 1px solid #ebebeb; border-radius: 0; background: transparent; }
+        .mini-app.google90-mode .input-area { background: #fff; }
+        .mini-app.coffee-mode { --bg: #2c2420; --text: #f3e5ab; --card-border: #4a3b33; --reply-bg: #3c322d; --primary: #d2b48c; border-radius: 20px 20px 20px 5px; }
+        .mini-app.arch-mode { --bg: #101214; --text: #ffffff; --card-border: #1793d1; --reply-bg: #1c1f22; --primary: #1793d1; font-family: 'Courier New', monospace; border-radius: 0; border-left: 4px solid var(--primary); }
+        .mini-app.arch-mode .msg { border-radius: 0; }
+        .mini-app.dmg-mode { --bg: #9bbc0f; --text: #0f380f; --primary: #306230; --reply-bg: #8bac0f; --card-border: #0f380f; font-family: 'Courier New', monospace; font-weight: bold; border-radius: 0; box-shadow: 4px 4px 0px #306230; }
+        .mini-app.theme-mode { --bg: #c0c0c0; --text: #000000; --card-border: #ffffff; --reply-bg: #dfdfdf; --primary: #000080; border-top: 2px solid #fff; border-left: 2px solid #fff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; border-radius: 0; }
+        .mini-app.theme-mode .status-bar { background: #008080; border-bottom: 2px solid #000; }
+        .mini-app.lily-mode { --bg: #000000; --text: #ffb7c5; --card-border: #4a1e26; --reply-bg: #1a0a0d; --primary: #ff8fa3; }
+        .mini-app.rose-mode { --bg: #fff5f7; --text: #5d4037; --card-border: #ffc1e3; --reply-bg: #ffe4f1; --primary: #f06292; }
+        .mini-app.roseblossom-mode { --bg: #050505; --text: #ffffff; --card-border: rgba(255, 183, 197, 0.3); --reply-bg: rgba(20, 20, 20, 0.4); --primary: #ffb7c5; }
+        .mini-app.bleach-mode { --bg: #ffffff; --text: #000000; --card-border: #eeeeee; --reply-bg: #fdfdfd; --primary: #000000; border-color: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+    <div id="bg-status" class="bg-ui">
+        <div class="bg-fake-pfp"></div><div class="bg-fake-pfp"></div><div class="bg-fake-pfp"></div>
+    </div>
+    <div id="bg-footer" class="bg-ui">
+        <div class="bg-fake-input"></div>
+        <div class="bg-fake-pfp" style="width: 70px; border-radius: 10px;"></div>
+    </div>
+
+    <div id="rain-container"></div>
+    <div class="dochacat-logo">Dochacat:3</div>
+
+    <script>
+        const container = document.getElementById('rain-container');
+        const users = ["Villylily :3", "ShadowByte", "KernelPanic", "PixelCat", "RootUser", "CyberMeow"];
+        const messages = [
+            "Dochacat:3 V11 is live!", "Deploying the update...", "Check the presence logs.",
+            "Spinning cat :3", "Does the CSS look okay?", "Working on image uploads!",
+            "New theme is clean.", "Auth level 45 reached!", "Talos-II ready.",
+            "Meow meow meow", "I use Arch btw", "Hack the planet!"
+        ];
+        const themes = [
+            'dark-mode', 'black-mode', 'midnight-mode', 'glass-mode', 
+            'ai-mode', 'sakura-mode', 'velvet-mode', 'google90-mode', 
+            'coffee-mode', 'arch-mode', 'dmg-mode', 'theme-mode', 
+            'lily-mode', 'rose-mode', 'roseblossom-mode', 'bleach-mode'
+        ];
+
+        const globalMouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => {
+            globalMouse.x = e.x;
+            globalMouse.y = e.y;
+        });
+
+        class MiniAppCard {
+            constructor() {
+                this.el = document.createElement('div');
+                this.sakuraInterval = null;
+                this.particles = [];
+                this.reset();
+                container.appendChild(this.el);
+            }
+
+            reset() {
+                if (this.sakuraInterval) clearInterval(this.sakuraInterval);
+
+                this.theme = themes[Math.floor(Math.random() * themes.length)];
+                this.el.className = `mini-app ${this.theme}`;
+
+                const user1 = users[Math.floor(Math.random() * users.length)];
+                const user2 = users[Math.floor(Math.random() * users.length)];
+                const text1 = messages[Math.floor(Math.random() * messages.length)];
+                const text2 = messages[Math.floor(Math.random() * messages.length)];
+
+                this.el.innerHTML = `
+                    <canvas class="internal-canvas" width="160" height="220"></canvas>
+                    <div class="petal-container"></div>
+                    <div class="status-bar">
+                        <div class="status-dots">
+                            <div class="fake-pfp"></div><div class="fake-pfp"></div><div class="fake-pfp"></div>
+                        </div>
+                        <div class="mini-logo">Dochacat:3</div>
+                    </div>
+                    <div class="chat-area">
+                        <div class="msg">
+                            <div class="msg-sender">${user1}</div>
+                            ${text1}
+                        </div>
+                        <div class="msg">
+                            <div class="msg-sender">${user2}</div>
+                            ${text2}
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <div class="mini-fake-input"></div>
+                    </div>
+                `;
+
+                this.x = Math.random() * (window.innerWidth - 180);
+                this.y = -300 - (Math.random() * 500);
+                this.speed = 1.2 + Math.random() * 2; 
+                this.rotation = (Math.random() - 0.5) * 12;
+
+                if (this.theme === 'sakura-mode') this.initSakura();
+                if (this.theme === 'roseblossom-mode') this.initRoseblossom();
+            }
+
+            initSakura() {
+                const petalContainer = this.el.querySelector('.petal-container');
+                this.sakuraInterval = setInterval(() => {
+                    const petal = document.createElement('div');
+                    petal.classList.add('petal-local');
+                    petal.style.left = Math.random() * 140 + 'px';
+                    petal.style.animationDuration = (Math.random() * 1.5 + 1.5) + 's';
+                    petalContainer.appendChild(petal);
+                    setTimeout(() => { if (petal.parentElement) petal.remove(); }, 3000);
+                }, 400);
+            }
+
+            initRoseblossom() {
+                this.canvas = this.el.querySelector('.internal-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                for (let i = 0; i < 15; i++) {
+                    this.particles.push({
+                        x: Math.random() * 160,
+                        y: Math.random() * 220,
+                        dx: (Math.random() - 0.5) * 1.2,
+                        dy: (Math.random() - 0.5) * 1.2,
+                        size: Math.random() * 1.5 + 0.5
+                    });
+                }
+            }
+
+            updateRoseblossom() {
+                if (!this.ctx) return;
+                this.ctx.clearRect(0, 0, 160, 220);
+
+                let localMouseX = globalMouse.x - this.x;
+                let localMouseY = globalMouse.y - this.y;
+
+                for (let i = 0; i < this.particles.length; i++) {
+                    let p = this.particles[i];
+                    p.x += p.dx; p.y += p.dy;
+                    if (p.x < 0 || p.x > 160) p.dx *= -1;
+                    if (p.y < 0 || p.y > 220) p.dy *= -1;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = '#ffb7c5';
+                    this.ctx.fill();
+
+                    for (let j = i; j < this.particles.length; j++) {
+                        let p2 = this.particles[j];
+                        let distSq = (p.x - p2.x)**2 + (p.y - p2.y)**2;
+                        if (distSq < 2500) {
+                            this.ctx.strokeStyle = `rgba(255, 183, 197, ${1 - distSq/2500})`;
+                            this.ctx.lineWidth = 0.5;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(p.x, p.y);
+                            this.ctx.lineTo(p2.x, p2.y);
+                            this.ctx.stroke();
+                        }
+                    }
+
+                    if (globalMouse.x !== null) {
+                        let mDistSq = (p.x - localMouseX)**2 + (p.y - localMouseY)**2;
+                        if (mDistSq < 4000) {
+                            this.ctx.strokeStyle = `rgba(240, 98, 146, ${1 - mDistSq/4000})`;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(p.x, p.y);
+                            this.ctx.lineTo(localMouseX, localMouseY);
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > window.innerHeight + 150) {
+                    this.reset();
+                }
+
+                if (this.theme === 'roseblossom-mode') {
+                    this.updateRoseblossom();
+                }
+
+                this.el.style.transform = `translate3d(${this.x}px, ${this.y}px, 0) rotate(${this.rotation}deg)`;
+            }
+        }
+
+        const cards = [];
+        for (let i = 0; i < 10; i++) { 
+            cards.push(new MiniAppCard());
+        }
+
+        function run() {
+            cards.forEach(c => c.update());
+            requestAnimationFrame(run);
+        }
+        run();
+
+        window.addEventListener('resize', () => {
+            cards.forEach(c => c.reset());
+        });
+    </script>
+</body>
+</html>
